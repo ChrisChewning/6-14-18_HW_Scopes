@@ -35,6 +35,7 @@ console.log('howdy');
 // console.log(sumDigits(42));
 // => 6;
 
+//#3--------------MY CODE----------------
 
 // function sumDigits(addItUp) {
 //   const splitted = addItUp.split('');
@@ -102,11 +103,45 @@ const sumArray = (summedItUp) => {
 console.log(sumArray([1, 2, 3, 4, 5, 6]));
 
 
-//HOW TO USE .reduce()?
-
-
+//HOW TO USE .reduce()?, which is an array method.
 // var total = nums.reduce(function(a,b) {
 //     return (+a)+(+b);
 // });
 //
 // //explanation: .reduce() is an array method.
+
+
+
+// #6: checkPrime function
+
+
+// Step One
+// Write a function called checkPrime that will test whether a number is Prime. The function will return true (Boolean) if Prime, false if not. Hint: Check every number up to the square root. To do this, try a for loop.
+
+// ---------------MY ANSWER---------------------
+
+const checkPrime = (prime) => {  //global scale so you can call it from printPrimes?
+  for (let i = 0; i < 10; i++) {
+   if (Math.sqrt(prime[i]) === prime[i]) {
+     return true;
+     } else {
+       return false;
+     }
+  }
+}
+console.log(checkPrime(2)); //false
+console.log(checkPrime(4)); //false
+
+//both return false so it's not working correctly.
+
+// Step Two
+// Write another function called printPrimes that will print (console log) all the Primes up to an arbitrary limit. For example, if you invoke your function with printPrimes(97), it will print all the Prime numbers up to and including 97. This function can call on the previous checkPrime function.
+
+const printPrimes = (prime2) => {
+for (let i = 0; i <= 97; i++)
+console.log(checkPrimes());  //says checkPrimes is not defined at printPrimes
+}
+printPrimes(10); //this should invoke up to 10 even though the loop went to 97.
+
+
+//problem 1: line 142: how to nest, or at least be able to call, the functions?
